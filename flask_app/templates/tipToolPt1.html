@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tip Tool</title>
+</head>
+<body>
+    <div class="containerWelcome">
+        <div class="navBar">
+            <a href="/user/account">Account</a>
+            <a class="welcomeHeader" href="#">The Tip Tool</a>
+            <a href="/logout/user">Logout</a>
+        </div>
+        <div class="toolForm">
+            <form name="numOfHours" class="welcomeForm" action="/count/shift/hours" method='POST'>
+                <label for="numOfHours">[Input the hours that each team member, including yourself, worked this shift. If non-applicable enter '0']</label>
+                <input name="numOfHours0" class="regBtn" type="number" step=.25 min=0 placeholder="hours worked">
+                <input name="numOfHours1" class="regBtn" type="number" step=.25 min=0 placeholder="hours worked">
+                <input name="numOfHours2" class="regBtn" type="number" step=.25 min=0 placeholder="hours worked">
+                <input name="numOfHours3" class="regBtn" type="number" step=.25 min=0 placeholder="hours worked">
+                <input name="numOfHours4" class="regBtn" type="number" step=.25 min=0 placeholder="hours worked">
+                <input name="numOfHours5" class="regBtn" type="number" step=.25 min=0 placeholder="hours worked">
+                <input id="moneyForm" type="submit" class="regBtn" value="calculate">
+                <div class="flash">
+                    {% with messages = get_flashed_messages() %}     <!-- declare a variable called messages -->
+                        {% if messages %}                            <!-- check if there are any messages -->
+                                <p>{{messages[0]}}</p>                   <!-- display each message in a paragraph tag -->
+                        {% endif %}
+                    {% endwith %}
+                </div>
+            </form>
+        </div>
+    <script src="script.js"></script>
+</body>
+</html>

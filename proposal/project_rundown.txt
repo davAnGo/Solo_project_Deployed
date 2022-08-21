@@ -1,0 +1,22 @@
+Solo_project1:
+The Tip Tool
+	The tip tool is, at its core, a process specific, service industry calculator. Although it runs very basic arithmetic it is the order and repetitiveness of this specific process that this app is meant to streamline. 
+		This app simplifies and streamlines the process of counting a pot, several employees total hours, and divvying out the money to each employee, and eliminates as much human error as possible. Hopefully the option to add any additional tip outs will be made possible as well as registering users and having specifications and names saved to profiles. 
+
+	This will be a python stack project so we will be using python, flask, SQL and AJAX to implement the backend logic and features.
+
+
+FEATURES/ORDER-OF-OPERATIONS:
+User registration/Login
+Counts pot based on number of each denomination declared
+Select custom input for number of bartenders/ servers working.
+*If there is a tip out this can be added and specified* 
+Names and number of hours can be applied to each bartender.
+All hours are counted up
+Total pool of money and hours are calculated and are declared along with the hourly rate to be divvied
+*If there is a tip out, that is found first and taken out of the total before being divided amongst the servers*
+Finally each bartender/servers name is displayed with their hours as well as their take from the pool at the end of the night 
+
+
+GITHUB REPO:
+https://github.com/davAnGo/Solo_Project.git

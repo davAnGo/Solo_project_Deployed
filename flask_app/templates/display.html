@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Results</title>
+</head>
+<body>
+    <div class="containerDisplay"> 
+        <div class="headerDisplay">
+            <h1 class="displayHead" >Nice Work!</h1> <!--maybe add some logic to implement a randomly generated positive phrase-->
+        </div>
+        <div class="bodyContainer">
+<div class="bodyDisplay">
+            <table>
+                <tr>
+                    <th>Hours Worked</th>
+                    <th>Each Cut</th>
+                    <!-- <th>Tipout THIS WILL BE A LATER FUNCTIONALITY WHEN I HAVE MORE TIME</th> -->
+                </tr>
+                {%for worker in range(totalWorkers)%}
+                <tr>
+                    <td>{{sessionedHoursValues[worker]}}</td>
+                    <td>{{collectiveCuts[worker]}}</td>
+                    <!-- <td>##</td>-->
+                    <td></td> 
+                </tr>
+                {% endfor %}
+            </table>
+        </div>
+        <div class="bodyDisplayMiddle">
+            <div class="title">
+                <h4>[Save your shift]</h4>
+            </div>
+            <form class = saveForm action="/save/shift", method = 'POST'>
+                <input name="shift_date" class="regBtn" type="date">
+                <input name="tips" class="regBtn" type="number" step="any" placeholder="tips"> 
+                <input class="regBtn" type="submit" value="Save">
+            </form>
+        </div>
+        </div>
+        
+        <div class="lowerBody">
+            <table>
+                <tr>
+                    <th>total hours</th>
+                    <th>total pool</th>
+                    <th>hourly rate</th>
+                </tr>
+                <tr>
+                    <td>{{sumOfHours}}</td>
+                    <td>{{sumOfMoney}}</td>
+                    <td>{{hourly}}</td>
+                </tr>
+            </table>
+        </div>
+        <div class="bottomDisplay">
+            <a class="welcomeBtn" href="/user/account">Account</a>
+            <a class="welcomeBtn" href="/dashboard">Tip-Tool</a>
+            <a class="welcomeBtn" href="/logout/user">Logout</a>
+        </div>
+    </div>
+</body>
+</html>

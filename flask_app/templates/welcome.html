@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome</title>
+</head>
+<body>
+    <div class="containerWelcome">
+        <div class="top">
+            <h1 class="welcomeHeader">Welcome</h1>
+            <h1 class="welcomeHeader">to</h1>
+            <h1 class="welcomeHeader">The Tip Tool</h1>
+            <div class="welcomeForm">
+                <a href="/login" class="welcomeBtn">Login</a>
+                <a href="/register" class="welcomeBtn">Register</a>
+            </div>
+        </div>
+        <div class="bodyWelcome">
+            <div id="instructions" class="popup">
+                <h1 class="popHeader">How to Use The Tip Tool</h1>
+                <span class="popupText">Thank you for using The Tip Tool.<br> Please follow these steps to get the most accurate results.<br>I. Input the number of hours for each bartender that worked during your shift including yourself. Make sure no inputs are left blank and a '0' is input for any blank inputs.<br>II. Input the total number of each denomination of money from the total pool. Do Not enter the total amount, The Tip Tool will do all the math for you. As with the previous page, do not leave any empty inputs. If necessary input '0' <br> III. Once reaching the 'Loading...' page click 'continue' to move forward.<br> IV. The display will show the cut for each bartender paired with the number of hours worked during the shift.<br> V. To save your shift to your account, in the form below, enter the date of your shift, the amount you made during the shift, and click save.<br> VI. Clicking delete will permanently delete your shift. 'Edit' will take you to the editor page where you can update the date and or tip amount of your shift. <br> VII. If you want to log your shift but you don't need to use the Tip Tool calculator you can use the 'Quick Add' function at the bottom of the User Account page.    </span>
+            </div>
+        </div>
+        <div class="bottom">
+            <button class="welcomeBtn" id="showPopup" onclick="document.getElementById('instructions').style.display ='block'" ondblclick="document.getElementById('instructions').style.display = 'none' ">How to use The Tip Tool</button>
+        </div>
+    </div>
+    <script src="scripts.js"></script>
+
+</body>
+</html>

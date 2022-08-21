@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename='css/style.css') }}">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Tip Tool</title>
+</head>
+<body>
+    <div class="containerWelcome">
+        <div class="navBar">
+            <a href="/user/account">Account</a>
+            <a class="welcomeHeader" href="#">The Tip Tool</a>
+            <a href="/logout/user">Logout</a>
+        </div>
+                <h2>your total hours were: {{sumOfHours}}</h2>
+                <h2 style="font-weight:100">Enter the quantity of each denomination</h2>
+                <form class="toolForm" action="/count/shift/money" method="POST"> 
+                <input class="toolBtn" type="number" min=0 name="quarters" placeholder="Quarters">
+                <input class="toolBtn" type="number" min=0 name="ones" placeholder="Ones">
+                <input class="toolBtn" type="number" min=0 name="fives" placeholder="Fives">
+                <input class="toolBtn" type="number" min=0 name="tens" placeholder="Tens">
+                <input class="toolBtn" type="number" min=0 name="twenties" placeholder="Twenties">
+                <input class="toolBtn" type="number" min=0 name="fifties" placeholder="Fifties">
+                <input class="toolBtn" type="number" min=0 name="hundreds" placeholder="Hundreds">
+            <!-- ditch the number of tip outs and make it a barback tipout -->
+                <!-- maybe have to scratch this option due to all the variables -->                    
+                <input id="moneyForm" type="submit" class="regBtn" value="calculate">
+                </form>
+                </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
